@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Наруто</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            
+
+            /* Фон */
+               background: url('zadniknaruto.jpg') no-repeat center/cover;
+        }
+
+        /* Затемнение фона */
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Заголовок */
+        h1 {
+            font-size: 48px;
+            margin-top: 20px;
+        }
+
+        /* Описание */
+        .description {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+     
+/* Блок с персонажами */
+        .characters {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            
+        }
+
+        .character {
+            width: 150px;
+            transition: 0.3s;
+        }
+
+        .character img {
+            width: 100%;
+            border-radius: 10px;
+
+        }
+
+        .character:hover {
+            transform: scale(1.05);
+        }
+
+        .character p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="overlay">
+
+    <!-- Заголовок -->
+    <h1>Наруто</h1>
+
+    <!-- Описание -->
+    <div class="description">
+        Наруто: 
+
+Наруто: 
+
+Жанр: Приключения, боевые искусства/экшен, фэнтези, сёнэн. 
+
+ Naruto – История рассказывает о мальчике-ниндзя Наруто Узумаки(Naruto Uzumaki) который мечтает стать Хокаге — самым сильным и уважаемым ниндзя своей деревни. Внутри него запечатан могущественный демон-лис Курама(Kurama) из-за чего многие жители его боятся. На протяжении истории Наруто тренируется, выполняет миссии и сражается с врагами, чтобы доказать свою силу и завоевать уважение.(Аниме выходило с 2002 года по 2007, его же продолжение с 2007 по 2017 год)
+
+Главные персонажи: Наруто Узумаки(Naruto Uzumaki), Саске Учиха(Sasuke Uchiha), Сакура Харуно(Sakura Haruno), Какаши Хатаке(Kakashi Hatake), Джирая(Jiraiya), Итачи Учиха(Itachi Uchiha).
+
+Манга «Naruto» состоит из 72 томов.
+
+
+</div>
+
+    <!-- Персонажи -->
+    <div class="characters">
+      <div class="character">
+            <img src="kakashi.jpg" alt="Kakashi">
+            <p>Какаши Хатакеы</p>
+        </div>
+      
+        <div class="character">
+            <img src="sasuke.jpg" alt="Sasuke">
+            <p> Саске Учиха</p>
+        </div>
+
+        <div class="character">
+            <img src="narutoo.jpg" alt="Naruto">
+            <p>Наруто Узумаки</p>
+        </div>
+
+        <div class="character">
+            <img src="sakura.jpg" alt="sakura">
+            <p>Cакура Харуно</p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
