@@ -23,6 +23,79 @@
             min-height: 100vh;
             padding: 20px;
         }
+/* ========================= */
+/* БОКОВЫЕ КАРТИНКИ */
+/* ========================= */
+
+.side-image {
+
+    position: fixed;
+
+    top: 120px;
+
+    width: 280px;
+    height: 70vh;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.85;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+/* Левая */
+
+.side-image.left {
+
+    left: 20px;
+
+    background-image: url('erenright_transparent.png');
+
+}
+
+/* Правая */
+
+.side-image.right {
+
+    right: 20px;
+
+    background-image: url('mikasaleft_transparent.png');
+
+}
+
+/* Контент поверх */
+
+.overlay {
+
+    position: relative;
+
+    z-index: 1;
+}
+
+/* Адаптив */
+
+@media (max-width: 1400px) {
+
+    .side-image {
+
+        width: 180px;
+
+        opacity: 0.5;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .side-image {
+
+        display: none;
+    }
+}
 
         /* Заголовок */
 
@@ -318,6 +391,8 @@
         <div class="reviews" id="reviews"></div>
 
     </div>
+<div class="side-image left"></div>
+<div class="side-image right"></div>
 
 </div>
 
