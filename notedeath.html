@@ -1,51 +1,125 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Тетрадь смерти</title>
+<meta charset="UTF-8">
+<title>Тетрадь смерти</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            
+<style>
 
-            /* Фон */
-               background: url('zadnikdeathnote.jpg') no-repeat center/cover;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
 
-        /* Затемнение фона */
-        .overlay {
-            background: rgba(0, 0, 0, 0.6);
-            min-height: 100vh;
-            padding: 20px;
-        }
+    /* Фон */
+    background: url('zadnikdeathnote.jpg') no-repeat center/cover;
+}
 
-        /* Заголовок */
-        h1 {
-            font-size: 48px;
-            margin-top: 20px;
-        }
+/* Затемнение */
 
-        /* Описание */
-        .description {
-            max-width: 800px;
-            margin: 20px auto;
-            font-size: 18px;
-            line-height: 1.6;
-            text-align: left;
-        }
+.overlay {
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    padding: 20px;
+}
 
-     
-/* Блок с персонажами */
+/* Заголовок */
+
+h1 {
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+/* Описание */
+
+.description {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+}
+/* ========================= */
+/* БОКОВЫЕ КАРТИНКИ */
+/* ========================= */
+
+.side-image {
+
+    position: fixed;
+
+    top: 120px;
+
+    width: 280px;
+    height: 70vh;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.85;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+/* Левая */
+
+.side-image.left {
+
+    left: 20px;
+
+    background-image: url('yagami_transparent.png');
+
+}
+
+/* Правая */
+
+.side-image.right {
+
+    right: 20px;
+
+    background-image: url('l_transparent.png');
+
+}
+
+/* Контент поверх */
+
+.overlay {
+
+    position: relative;
+
+    z-index: 1;
+}
+
+/* Адаптив */
+
+@media (max-width: 1400px) {
+
+    .side-image {
+
+        width: 180px;
+
+        opacity: 0.5;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .side-image {
+
+        display: none;
+    }
+
+}
+        /* Блок с персонажами */
         .characters {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 40px;
-            
         }
 
         .character {
@@ -56,7 +130,6 @@
         .character img {
             width: 100%;
             border-radius: 10px;
-
         }
 
         .character:hover {
@@ -66,52 +139,346 @@
         .character p {
             margin-top: 10px;
         }
-    </style>
+/* Персонажи */
+
+.characters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.character {
+    width: 150px;
+    transition: 0.3s;
+}
+
+.character img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.character:hover {
+    transform: scale(1.05);
+}
+
+.character p {
+    margin-top: 10px;
+}
+
+/* Блок отзывов */
+
+.reviews-section {
+    margin-top: 60px;
+}
+
+/* Звезды */
+
+.stars {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.star {
+    cursor: pointer;
+    color: gray;
+    transition: 0.2s;
+}
+
+.star.active {
+    color: gold;
+}
+
+/* Поле */
+
+textarea {
+    width: 80%;
+    max-width: 600px;
+    height: 100px;
+
+    border-radius: 10px;
+    padding: 10px;
+
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+}
+
+/* Кнопка */
+
+button {
+    margin-top: 15px;
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: gold;
+    color: black;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: orange;
+}
+
+/* Список комментариев */
+
+.reviews {
+    margin-top: 40px;
+}
+
+.review {
+    background: rgba(255,255,255,0.1);
+
+    width: 80%;
+    max-width: 600px;
+
+    margin: 15px auto;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    text-align: left;
+}
+
+.review-stars {
+    color: gold;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.review-date {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+</style>
 </head>
 
 <body>
+
 <div class="overlay">
 
-    <!-- Заголовок -->
     <h1>Тетрадь смерти</h1>
 
-    <!-- Описание -->
     <div class="description">
-        Тетрадь смерти: 
 
-Тетрадь смерти: 
+        <p>
+        <b>Жанр:</b> Психологический триллер, детектив, сверхъестественное.
+        </p>
 
-Жанр: Психологический триллер, детектив, сверхъестественное, сэйнен/мистический. 
+        <p>
+        Death Note — это аниме про гениального школьника Ягами Лайта,
+        который находит тетрадь смерти.
+        Если записать имя человека — он умрёт.
+        </p>
 
-Death Note - это аниме про гениального школьника Ягами Лайта(Light Yagami), который находит тетрадь: если написать в нее имя человека, тот умрет. Он начинает убивать преступников, чтобы стать "Богом нового мира", но за ним начинает охоту детектив Л(L). Вся история – это интеллектуальная игра и противостояние между ними. (Год выпуска 2006 и транслировалось до 2007 года)
+        <p>
+        Лайт начинает убивать преступников, пытаясь стать
+        «богом нового мира», но против него выступает легендарный
+        детектив Л.
+        </p>
 
-Главные персонажи: Ягами Лайт(Light Yagami), детектив Л(L), Рюк(Ryuk), Амане Миса(Misa Amane), Ниа(Near), Мелло(Mello).
-
-Манга «Death Note»состоит всего из 12 томов.
-
-</div>
+    </div>
+<div class="side-image left"></div>
+<div class="side-image right"></div>
 
     <!-- Персонажи -->
+
     <div class="characters">
+
         <div class="character">
             <img src="Ryuk.jpg" alt="Ryuk">
-            <p>Рюк</p> 
-        </div>
-        <div class="character">
-            <img src="kira.jpg" alt="Armin">
-            <p> Ягами Лайт</p>
+            <p>Рюк</p>
         </div>
 
         <div class="character">
-            <img src="misa.jpg" alt="Eren">
+            <img src="kira.jpg" alt="Light">
+            <p>Ягами Лайт</p>
+        </div>
+
+        <div class="character">
+            <img src="misa.jpg" alt="Misa">
             <p>Аманэ Миса</p>
         </div>
 
         <div class="character">
             <img src="L.jpg" alt="L">
             <p>Л</p>
+        </div>
+
+    </div>
+
+    <!-- Отзывы -->
+
+    <div class="reviews-section">
+
+        <h2>Оцените аниме</h2>
+
+        <div class="stars">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+        </div>
+
+        <textarea
+            id="commentInput"
+            placeholder="Напишите комментарий..."
+        ></textarea>
+
+        <br>
+
+        <button id="sendBtn">
+            Отправить
+        </button>
+
+        <div class="reviews" id="reviews"></div>
+
     </div>
 
 </div>
+
+<script>
+
+const stars = document.querySelectorAll(".star");
+const sendBtn = document.getElementById("sendBtn");
+const commentInput = document.getElementById("commentInput");
+const reviewsContainer = document.getElementById("reviews");
+
+let rating = 0;
+
+/* Loading */
+
+loadReviews();
+
+/* Star selection */
+
+stars.forEach(star => {
+
+    star.addEventListener("click", () => {
+
+        rating = Number(star.dataset.value);
+
+        stars.forEach(s => {
+            s.classList.remove("active");
+        });
+
+        for(let i = 0; i <rating; i++) {
+            stars[i].classList.add("active");
+        }
+
+    });
+
+});
+
+/* Sending */
+
+sendBtn.addEventListener("click", () => {
+
+    const text = commentInput.value.trim();
+
+    if(rating === 0) {
+        alert("Please provide a rating");
+        return;
+    }
+
+    if(text === "") {
+        alert("Please enter a comment");
+        return;
+    }
+
+    const review = {
+        rating: rating,
+        text: text,
+        date: new Date().toLocaleString()
+    };
+
+    addReview(review);
+
+    saveReview(review);
+
+    commentInput.value = "";
+
+    rating = 0;
+
+    stars.forEach(s => {
+        s.classList.remove("active");
+    });
+
+});
+
+/* Adding */
+
+function addReview(review) {
+
+    const div = document.createElement("div");
+
+    div.classList.add("review");
+
+    div.innerHTML = `
+
+        <div class="review-stars">
+            ${"★".repeat(review.rating)}
+        </div>
+
+        <div>
+            ${review.text}
+        </div>
+
+        <div class="review-date">
+            ${review.date}
+        </div>
+
+    `;
+
+    reviewsContainer.prepend(div);
+
+}
+
+/* Saving */
+
+function saveReview(review) {
+
+    let reviews =
+        JSON.parse(localStorage.getItem("deathnoteReviews"))
+        || [];
+
+    reviews.push(review);
+
+    localStorage.setItem(
+        "deathnoteReviews",
+        JSON.stringify(reviews)
+    );
+
+}
+
+/* Loading */
+
+function loadReviews() {
+
+    let reviews =
+        JSON.parse(localStorage.getItem("deathnoteReviews"))
+        || [];
+
+    reviews.forEach(review => {
+        addReview(review);
+    });
+
+}
+
+</script>
+
 </body>
 </html>
